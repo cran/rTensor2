@@ -9,13 +9,17 @@ Performs QR Decomposition of a Complex Matrix without pivoting.
 QR(A)
 }
 \arguments{
-\item{A}{: an  \eqn{n x n} matrix}
+\item{A}{: an  \eqn{n} x \eqn{n} matrix}
 }
 \value{
 an orthogonal matrix Q and an upper triangular matrix R so that A = QR.
 }
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \examples{
 z <- complex(real = rnorm(16), imag = rnorm(16))

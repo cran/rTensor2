@@ -1,7 +1,15 @@
 tSVDdwht <- function (tnsr)
 {
+  # Performs a tensor singular value decomposition on any 3-mode
+  # tensor using the discrete Walsh-Hadamard transform.
+
+  # Input: A, 3-mode tensor
+  # Output: Tensors U (left singular value object),
+  # V (right singular value object) and
+  # S, a diagonal tensor so that A=USV^T.
+
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tSVDdwht only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

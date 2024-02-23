@@ -18,7 +18,11 @@ P the polar form (real-valued) matrix of eigenvectors.
 D the polar form (real-valued) matrix of eigenvalues.
 }
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \examples{
 z <- complex(real = rnorm(16), imag = rnorm(16))

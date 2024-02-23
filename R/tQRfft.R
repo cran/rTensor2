@@ -1,7 +1,13 @@
 tQRfft <- function (tnsr)
 {
+  # Performs a tensor QR decomposition on any 3-mode tensor
+  # using the discrete fast fourier transform.
+
+  # Input: A, 3-mode tensor
+  # Output: Tensors Q and R so that A=QR.
+
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tQRfft only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

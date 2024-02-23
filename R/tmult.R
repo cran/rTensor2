@@ -1,5 +1,11 @@
 tmult <- function (x,y,tform)
 {
+  # Multiplies 2 3-mode tensors together using
+  # any discrete transform.
+
+  # Note: in order for the product to be conformable,
+  # Mode 2 of x and Mode 1 of y must match.
+
   modes_x <- x@modes
   modes_y <- y@modes
   if ((x@num_modes > 3) || (y@num_modes > 3))
@@ -10,13 +16,13 @@ tmult <- function (x,y,tform)
   if (n3 != modes_y[3])
     stop("Modes 3 of x and y must match")
   if (tform=="dwt"){
-   if (sum(as.numeric(intToBits(modes_x[3]))) != 1)
-    stop("Mode 3 must be a power of 2 otherwise using 0 padding")
-   if (sum(as.numeric(intToBits(modes_y[3]))) != 1)
-    stop("Mode 3 must be a power of 2 otherwise using 0 padding")
+    if (sum(as.numeric(intToBits(modes_x[3]))) != 1)
+      stop("Mode 3 must be a power of 2 otherwise using 0 padding")
+    if (sum(as.numeric(intToBits(modes_y[3]))) != 1)
+      stop("Mode 3 must be a power of 2 otherwise using 0 padding")
   }
   if (tform=="fft") {
-     t.form=fft
+    t.form=fft
     it.form=ifft
   } else if (tform=="dwt") {
     t.form=tDWT

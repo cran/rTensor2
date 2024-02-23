@@ -50,7 +50,6 @@ matrices", Linear Algebra and its Applications, vol. 433, no. 7, pp.
 1241-1253, 2010.
 }
 \examples{
-require(rTensor)
 T <- rand_tensor(modes=c(2,2,4))
 tQR(T,"dst")
 }

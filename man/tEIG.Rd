@@ -9,7 +9,7 @@ Performs a Eigenvalue decomposition of 3-mode tensor using any discrete transfor
 tEIG(tnsr, tform)
 }
 \arguments{
-\item{tnsr}{: a 3-mode tensor}
+\item{tnsr}{: a 3-mode tensor, \eqn{n} x \eqn{n} x \eqn{k}}
 
 \item{tform}{: Any discrete transform.  Supported transforms are:
 
@@ -28,15 +28,19 @@ tEIG(tnsr, tform)
 \value{
 a \href{/library/rTensor/help/Tensor-class}{Tensor-class} object
 
-If Eigenvalue decomposition is performed on a \eqn{n x n x k} tensor, the components in the returned value are:
+If Eigenvalue decomposition is performed on a \eqn{n} x \eqn{n} x \eqn{k} tensor, the components in the returned value are:
 
-    P: A tensor of Eigenvectors (\eqn{n x n x k})
+    P: A tensor of Eigenvectors (\eqn{n} x \eqn{n} x \eqn{k})
 
-    D: An diagonal tensor of Eigenvalues (\eqn{n x n x k})
+    D: An diagonal tensor of Eigenvalues (\eqn{n} x \eqn{n} x \eqn{k})
 
 }
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \references{
 Kernfeld, E., Kilmer, M., & Aeron, S. (2015). Tensor-tensor products with invertible linear transforms. Linear Algebra and its Applications, 485, 545-570.
@@ -50,7 +54,6 @@ matrices", Linear Algebra and its Applications, vol. 433, no. 7, pp.
 1241-1253, 2010.
 }
 \examples{
-require(rTensor)
 T <- rand_tensor(modes=c(2,2,4))
 tEIG(T,"dst")
 }

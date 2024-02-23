@@ -1,4 +1,9 @@
 QR <- function(A) {
+  # Performs QR Decomposition of a Complex Matrix without pivoting.
+
+  # Input: A square complex matrix A.
+  # Output: Matrices Q and R so that A=QR.
+
   A <- as.matrix(A)
   # Get the number of rows and columns of the matrix
   n <- ncol(A)

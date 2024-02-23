@@ -1,7 +1,14 @@
-tsym <- function (tnsr) {
+tsym <- function (tnsr)
+{
+  # Performs a transpose of a symmetric 3-mode tensor
+  # by transposing each of the lateral slices.
+
+  # Input: a 3-mode tensor
+  # Output: the transpose of the tensor
+
   x <- as.array(tnsr@data)
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tsym only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

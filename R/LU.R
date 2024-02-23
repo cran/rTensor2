@@ -1,5 +1,10 @@
 LU <- function (A)
 {
+  # LU decomposition of a complex (possibly) matrix
+
+  # Input: A, a square matrix.
+  # Output: the matrices L and U so that A=LU.
+
   n <- nrow(A)
   m <- ncol(A)
   decomp <- function(A) {

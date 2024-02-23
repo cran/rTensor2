@@ -28,16 +28,20 @@ tSVD(tnsr,tform)
 \value{
 a \href{/library/rTensor/help/Tensor-class}{Tensor-class} object
 
-If the SVD is performed on a \eqn{m x n x k} tensor, the components in the returned value are:
+If the SVD is performed on a \eqn{m} x \eqn{n} x \eqn{k} tensor, the components in the returned value are:
 
-    U: The left singular value tensor object (\eqn{m x m x k})
+    U: The left singular value tensor object (\eqn{m} x \eqn{m} x \eqn{k})
 
-    V: The right singular value tensor object (\eqn{n x n x k})
+    V: The right singular value tensor object (\eqn{n} x \eqn{n} x \eqn{k})
 
-    S: A diagonal tensor (\eqn{m x n x k})
+    S: A diagonal tensor (\eqn{m} x \eqn{n} x \eqn{k})
 }
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \references{
 Kernfeld, E., Kilmer, M., & Aeron, S. (2015). Tensor-tensor products with invertible linear transforms. Linear Algebra and its Applications, 485, 545-570.
@@ -51,7 +55,6 @@ matrices", Linear Algebra and its Applications, vol. 433, no. 7, pp.
 1241-1253, 2010.
 }
 \examples{
-require(rTensor)
 T <- rand_tensor(modes=c(2,3,4))
 print(tSVD(T,"dst"))
 }

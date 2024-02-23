@@ -1,6 +1,12 @@
-tIDWT <- function (tnsr) {
+tIDWT <- function (tnsr)
+{
+  # Performs the Discrete Inverse Wavelet Transform of a 3-D Tensor.
+
+  # Input: tnsr, a 3D tensor
+  # Output: The a 3D tensor
+
     if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tIDWT only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

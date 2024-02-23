@@ -1,9 +1,10 @@
 exportPattern("^[[:alpha:]]+")
 import(methods)
-import(rTensor)
+importFrom(rTensor,t_svd,t_mult,fnorm,as.tensor)
 importFrom(wavethresh,wd,accessC.wd,accessD.wd,conbar,filter.select)
 importFrom(gsignal,ifft,dst,idst,dct,idct,fht,ifht,fwht,ifwht)
 importFrom(Matrix,rankMatrix)
 importFrom(matrixcalc,lu.decomposition)
-importFrom(stats,fft)
+importFrom(stats,fft,rnorm)
+
 

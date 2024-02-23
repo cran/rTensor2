@@ -25,7 +25,6 @@ If LU decomposition is performed on a \eqn{n x n x k} tensor, the components in 
 Kyle Caudle kyle.caudle@sdsmt.edu
 }
 \examples{
-require(rTensor)
 T <- rand_tensor(modes=c(2,2,4))
 print(tLUfft(T))
 }

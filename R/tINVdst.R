@@ -1,6 +1,13 @@
-tINVdst <- function(tnsr){
+tINVdst <- function(tnsr)
+{
+  # Performs inverse of 3-mode tensor using the
+  # discrete sine transform.
+
+  # Input: tnsr, a 3D tensor
+  # Output: The inverse of tnsr, a 3D tensor
+
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tINVdst only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

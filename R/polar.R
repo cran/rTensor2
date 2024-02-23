@@ -1,4 +1,18 @@
 polar <- function(P,D) {
+  #Creates the polar/Jordan form of the
+  # P and D matrices after performing
+  # eigenvalue decomposition where the
+  # eigenvalue values are complex.
+
+  # Input: P, the matrix of eigenvectors from an eigen
+  # value decomposition.  D, the eigenvalues
+  # from an eigenvalue deocmpostion.
+
+  # Output: P the polar form (real-valued)
+  # matrix of eigenvectors.
+  # D the polar form (real-valued) matrix
+  # of eigenvalues.
+
   n <- length(D)
   retV <- matrix(0,nrow=n,ncol=n)
   retD <- matrix(0,nrow=n,ncol=n)

@@ -1,7 +1,14 @@
 tEIGfft <- function (tnsr)
 {
+  # Performs a Eigenvalue decomposition of 3-mode tensor
+  # using the discrete fast fourier transform.
+
+  # Input: tnsr, a 3D tensor
+  # Output: A tensor P of eigenvectors and a tensor D
+  # eigenvalues so that tnsr = P D P^-1
+
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tEIGfft only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

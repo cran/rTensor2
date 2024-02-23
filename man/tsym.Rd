@@ -15,10 +15,13 @@ tsym(tnsr)
 a \href{/library/rTensor/help/Tensor-class}{Tensor-class} object
 }
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \examples{
-require(rTensor)
 T <- rand_tensor(modes=c(2,3,4))
 print(tsym(T))
 }

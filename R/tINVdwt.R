@@ -1,6 +1,13 @@
-tINVdwt <- function(tnsr){
+tINVdwt <- function(tnsr)
+{
+  # Performs inverse of 3-mode tensor using the
+  # discrete wavelet transform.
+
+  # Input: tnsr, a 3D tensor
+  # Output: The inverse of tnsr, a 3D tensor
+
   if (tnsr@num_modes != 3)
-    stop("T-SVD only implemented for 3d so far")
+    stop("tINVdwt only implemented for 3d so far")
   modes <- tnsr@modes
   n1 <- modes[1]
   n2 <- modes[2]

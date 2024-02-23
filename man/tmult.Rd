@@ -29,13 +29,15 @@ tmult(x,y,tform)
 }
 \value{
 a \href{/library/rTensor/help/Tensor-class}{Tensor-class} object
-
-"transform" (e.g. "dst")}
+}
 \author{
-Kyle Caudle kyle.caudle@sdsmt.edu
+Kyle Caudle
+
+Randy Hoover
+
+Jackson Cates
 }
 \examples{
-require(rTensor)
 T1 <- rand_tensor(modes=c(2,2,4))
 T2 <- rand_tensor(modes=c(2,3,4))
 print(tmult(T1,T2,"dst"))
