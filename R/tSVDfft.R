@@ -16,17 +16,22 @@ tSVDfft <- function (tnsr)
   n3 <- modes[3]
   fftz <- aperm(apply(tnsr@data, MARGIN = 1:2, fft), c(2,3,1))
   U_arr <- array(0, dim = c(n1, n1, n3))
-  V_arr <- array(0, dim = c(n2, n2, n3))
+  Vt_arr <- array(0, dim = c(n2, n2, n3))
   m <- min(n1, n2)
   S_arr <- array(0, dim = c(n1, n2, n3))
   for (j in 1:n3) {
-    decomp <- svd(fftz[, , j], nu = n1, nv = n2)
+    decomp <- La.svd(fftz[, , j], nu = n1, nv = n2)
+    #decomp <- La.svd(fftz[, , j],nu=m,nv=m)
     U_arr[, , j] <- decomp$u
-    V_arr[, , j] <- decomp$v
+    Vt_arr[, , j] <- decomp$vt
     S_arr[, , j] <- diag(decomp$d, nrow = n1, ncol = n2)
   }
-  U <- as.tensor(aperm(apply(U_arr, MARGIN = 1:2, ifft), c(2,3,1)))
-  V <- as.tensor(aperm(apply(V_arr, MARGIN = 1:2, ifft), c(2,3,1)))
-  S <- as.tensor(aperm(apply(S_arr, MARGIN = 1:2, ifft), c(2,3,1)))
+  U <- aperm(apply(U_arr, MARGIN = 1:2, ifft), c(2,3,1))
+  Vt <- aperm(apply(Vt_arr, MARGIN = 1:2, ifft), c(2,3,1))
+  S <- aperm(apply(S_arr, MARGIN = 1:2, ifft), c(2,3,1))
+  U <- as.tensor(U)
+  Vt <- as.tensor(Vt)
+  V <- t_tpose(Vt,"fft")
+  S <- as.tensor(S)
   invisible(list(U = U, V = V, S = S))
 }

@@ -12,6 +12,9 @@ tDWT <- function (tnsr) {
   n2 <- modes[2]
   n3 <- modes[3]
 
+  # Check to make sure n3 is more than 2.
+  if (n3==2)
+    stop("Mode 3 must have length 2^n where n>2")
   #  Check to see if mode 3 is a power of 2.
   if (sum(as.numeric(intToBits(n3))) != 1)
     stop("Mode 3 must be a power of 2 otherwise using 0 padding")

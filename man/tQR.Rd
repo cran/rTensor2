@@ -28,11 +28,11 @@ tQR(tnsr,tform)
 \value{
 a \href{/library/rTensor/help/Tensor-class}{Tensor-class} object
 
-If the QR decomposition is performed on a \eqn{n x n x k} tensor, the components in the returned value are:
+If the QR decomposition is performed on a \eqn{n \times n \times k} tensor, the components in the returned value are:
 
-    Q: The left singular value tensor object (\eqn{n x n x k})
+    Q: The left singular value tensor object (\eqn{n \times n \times k})
 
-    R: The right singular value tensor object (\eqn{n x n x k})
+    R: The right singular value tensor object (\eqn{n \times n \times k})
 
 }
 \author{

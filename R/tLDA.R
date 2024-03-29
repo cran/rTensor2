@@ -43,11 +43,7 @@ Sw <- rand_tensor(modes = c(r,r,d), drop = FALSE) * 0
 
 
 for (i in 0:(nClass-1)) {
-  if (tform=="fft"){
-    CTtrans <- t(CT[,(i*N+1):(N*(i+1)),])
-  } else {
-    CTtrans <- tsym(CT[,(i*N+1):(N*(i+1)),])
-  }
+  CTtrans <- t_tpose(CT[,(i*N+1):(N*(i+1)),],tform)
   Tcov <- tmult(CT[,(i*N+1):(N*(i+1)),],CTtrans,tform)
   Sw <- Sw + Tcov
 }
@@ -72,7 +68,7 @@ if (tform=="fft") {
 } else {
   for (i in 0:(nClass-1)) {
     M <- tmean(tnsr[,(i*N+1):(N*(i+1)),])
-    Sb <- Sb + N*tmult((M-tMu),tsym(M-tMu),tform)
+    Sb <- Sb + N*tmult((M-tMu),t_tpose(M-tMu,tform),tform)
    }
 }
 
